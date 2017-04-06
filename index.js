@@ -1,14 +1,19 @@
 "use strict";
-function encode(str) {
-  return encodeURIComponent(str)
+const encode = str => {
+  return encodeURIComponent(str + '')
     .replace(/[!'()]/g, escape)
     .replace(/\*/g, "%2A")
-    .replace(/\%20/g, "+");
-}
+    .replace(/\%20/g, "+")
+    .replace(/~/g, '%7E');
+};
 
-function decode(str) {
-  return decodeURIComponent(str.replace(/\+/g, " ").replace(/\%2A/g, "*"));
-}
+const decode = str => {
+  return decodeURIComponent(
+    (str + '')
+    .replace(/%(?![\da-f]{2})/gi, () => '%25')
+    .replace(/\+/g, '%20')
+  );
+};
 
 module.exports = encode;
 module.exports.encode = encode;

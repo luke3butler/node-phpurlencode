@@ -8,8 +8,8 @@ describe("urlencode", function() {
       "should encode special characters similar to php's urlencode",
       function() {
         assert.equal(
-          "%21%40%23%24%25%5E%26%2A%28%29%2B%27",
-          urlencode("!@#$%^&*()+'")
+          "%21%40%23%24%25%5E%26%2A%28%29%2B%27%7E%22%3C%3E%2C.",
+          urlencode("!@#$%^&*()+'~\"<>,.")
         );
       }
     );
@@ -28,8 +28,8 @@ describe("urlencode", function() {
       "should decode special characters similar to php's urldecode",
       function() {
         assert.equal(
-          "!@#$%^&*()+'",
-          urlencode.decode("%21%40%23%24%25%5E%26%2A%28%29%2B%27")
+          "!@#$%^&*()+'~\"<>,.",
+          urlencode.decode("%21%40%23%24%25%5E%26%2A%28%29%2B%27%7E%22%3C%3E%2C.")
         );
       }
     );

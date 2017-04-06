@@ -1,7 +1,7 @@
 {
   "name": "phpurlencode",
   "description": "Functionally similar to PHP urlencode and urldecode functions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -13,5 +13,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/luke3butler/node-phpurlencode.git"
-  }
+  },
+  "dependencies": {}
 }
