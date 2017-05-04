@@ -1,5 +1,5 @@
 "use strict";
-const encode = str => {
+const encode = function(str) {
   return encodeURIComponent(str + '')
     .replace(/[!'()]/g, escape)
     .replace(/\*/g, "%2A")
@@ -7,7 +7,7 @@ const encode = str => {
     .replace(/~/g, '%7E');
 };
 
-const decode = str => {
+const decode = function(str) {
   return decodeURIComponent(
     (str + '')
     .replace(/%(?![\da-f]{2})/gi, () => '%25')
