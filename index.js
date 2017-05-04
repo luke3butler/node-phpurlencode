@@ -15,6 +15,20 @@ const decode = function(str) {
   );
 };
 
+const definePrototypes = function () {
+  if (!String.prototype.urlencode) {
+    global.String.prototype.urlencode = function () {
+      return encode(this);
+    };
+  }
+  if (!String.prototype.urldecode) {
+    global.String.prototype.urldecode = function () {
+      return decode(this);
+    };
+  }
+};
+
 module.exports = encode;
 module.exports.encode = encode;
 module.exports.decode = decode;
+module.exports.definePrototypes = definePrototypes;
