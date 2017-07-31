@@ -10,7 +10,7 @@ const encode = function(str) {
 const decode = function(str) {
   return decodeURIComponent(
     (str + '')
-    .replace(/%(?![\da-f]{2})/gi, () => '%25')
+    .replace(/%(?![\da-f]{2})/gi, '%25')
     .replace(/\+/g, '%20')
   );
 };
